@@ -1,0 +1,33 @@
+<div class="row mt-3 animate__animated animate__fadeInUp" *ngIf="movie">
+  <div class="col-md-6">
+    <img class="img-fluid" [src]="movie.poster_path | poster" [alt]="movie.title">
+  </div>
+  <div class="col-md-6">
+    <h3>{{ movie.title }}</h3>
+    <div class="row">
+      <div class="col">
+        <bar-rating [rate]="movie.vote_average" [max]="10"></bar-rating>
+      </div>
+      <div class="col text-light">
+        {{ movie.vote_average | number:'1.1-2' }}
+      </div>
+      <div class="row">
+        <div class="col text-light">
+          {{ movie.overview }}
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+          <button class="btn btn-outline-danger pe-5 ps-5" (click)="back()"> Back </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-5 animate__animated animate__fadeInUp" *ngIf="cast.length > 0">
+  <h3>Movie Cast</h3>
+  <hr class="text-light">
+  <div class="col">
+    <app-cast-slide-show [cast]="cast"></app-cast-slide-show>
+  </div>
+</div>
