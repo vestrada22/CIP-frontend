@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BarRatingModule } from "ngx-bar-rating";
 import { PipesModule } from '../pipes/pipes.module';
 import { RouterModule } from '@angular/router';
+import { SwiperModule } from 'swiper/angular';
 
 import { CastSlideShowComponent } from './cast-slide-show/cast-slide-show.component';
 import { MoviesPosterGridComponent } from './movies-poster-grid/movies-poster-grid.component';
@@ -22,7 +23,8 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
     CommonModule,
     BarRatingModule,
     RouterModule,
-    PipesModule
+    PipesModule,
+    SwiperModule
   ],
   exports: [
     CastSlideShowComponent,
